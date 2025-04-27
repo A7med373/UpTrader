@@ -1,0 +1,9 @@
+[flake8]
+exclude = .git,__pycache__,.venv,venv,env,migrations,static,media,.env,.env.example,.dockerignore,.gitignore,*.md,*.yml,*.yaml,*.json,*.html,*.css,*.js
+max-line-length = 127
+max-complexity = 10
+per-file-ignores =
+    UpTrader/urls.py:E501
+    populate_menu_data.py:F401,F841,E501,E402,E302,E305,W292
+    tree_menu/templatetags/menu_tags.py:C901
+    tree_menu/models.py:E127,E128

@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+.venv
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local development
+.idea
+.vscode
+*.swp
+*.swo
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+
+# Media and static files (will be mounted as volumes)
+media/
+static/

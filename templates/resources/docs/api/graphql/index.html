@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}GraphQL API - Tree Menu Demo{% endblock %}
+
+{% block header %}GraphQL API Documentation{% endblock %}
+
+{% block content %}
+    <p>This is the GraphQL API documentation page of the Tree Menu demonstration.</p>
+    <p>Our GraphQL API provides a flexible way to query and manipulate data in our system.</p>
+    
+    <h3>GraphQL Schema</h3>
+    <p>Here's a simplified version of our GraphQL schema:</p>
+    <pre><code>
+    type Menu {
+      id: ID!
+      name: String!
+      items: [MenuItem!]!
+    }
+
+    type MenuItem {
+      id: ID!
+      name: String!
+      url: String!
+      isNamedUrl: Boolean!
+      parent: MenuItem
+      children: [MenuItem!]!
+      menu: Menu!
+    }
+
+    type Query {
+      menus: [Menu!]!
+      menu(id: ID!): Menu
+      menuByName(name: String!): Menu
+      menuItems(menuId: ID!): [MenuItem!]!
+      menuItem(id: ID!): MenuItem
+    }
+    </code></pre>
+    
+    <h3>Example Query</h3>
+    <pre><code>
+    query {
+      menu(name: "main_menu") {
+        id
+        name
+        items {
+          id
+          name
+          url
+          children {
+            id
+            name
+            url
+          }
+        }
+      }
+    }
+    </code></pre>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

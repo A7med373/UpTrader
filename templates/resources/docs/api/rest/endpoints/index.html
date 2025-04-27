@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}API Endpoints - Tree Menu Demo{% endblock %}
+
+{% block header %}API Endpoints Documentation{% endblock %}
+
+{% block content %}
+    <p>This is the API Endpoints documentation page of the Tree Menu demonstration.</p>
+    <p>Our REST API provides various endpoints for interacting with the system.</p>
+    
+    <h3>Available Endpoints</h3>
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>Endpoint</th>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>/api/menus</td>
+                <td>GET</td>
+                <td>List all available menus</td>
+            </tr>
+            <tr>
+                <td>/api/menus/{id}</td>
+                <td>GET</td>
+                <td>Get details of a specific menu</td>
+            </tr>
+            <tr>
+                <td>/api/menus/{id}/items</td>
+                <td>GET</td>
+                <td>Get all items for a specific menu</td>
+            </tr>
+            <tr>
+                <td>/api/items/{id}</td>
+                <td>GET</td>
+                <td>Get details of a specific menu item</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Example Request</h3>
+    <pre><code>
+    // Example request to get all menus
+    fetch('https://api.example.com/api/menus', {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer YOUR_TOKEN',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    </code></pre>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

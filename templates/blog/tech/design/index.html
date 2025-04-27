@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Design Blog - Tree Menu Demo{% endblock %}
+
+{% block header %}Design Blog{% endblock %}
+
+{% block content %}
+    <p>This is the design blog page of the Tree Menu demonstration.</p>
+    <p>Here you'll find articles about design topics related to the Tree Menu application and web design in general.</p>
+    
+    <div class="blog-posts">
+        <article class="blog-post">
+            <h3>Designing Effective Navigation Menus</h3>
+            <p class="post-meta">Posted on <time datetime="2023-05-20">May 20, 2023</time> by <span class="author">Sarah Johnson</span></p>
+            <p class="post-excerpt">
+                Navigation is a critical component of any website or application. In this article, we'll explore best practices for
+                designing effective navigation menus that enhance user experience and make content easily accessible.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Visual Hierarchy in Menu Design</h3>
+            <p class="post-meta">Posted on <time datetime="2023-04-15">April 15, 2023</time> by <span class="author">Michael Chen</span></p>
+            <p class="post-excerpt">
+                Visual hierarchy is essential for guiding users through complex navigation structures. In this article, we'll discuss
+                techniques for creating clear visual hierarchy in multi-level menus using typography, color, and spacing.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Responsive Menu Design Patterns</h3>
+            <p class="post-meta">Posted on <time datetime="2023-03-05">March 5, 2023</time> by <span class="author">Sarah Johnson</span></p>
+            <p class="post-excerpt">
+                Creating menus that work well across different screen sizes is a common challenge. In this article, we'll explore
+                various responsive menu design patterns and when to use each one for optimal user experience.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Accessibility in Menu Design</h3>
+            <p class="post-meta">Posted on <time datetime="2023-02-10">February 10, 2023</time> by <span class="author">Michael Chen</span></p>
+            <p class="post-excerpt">
+                Accessible design is not just a nice-to-have, it's essential. In this article, we'll discuss how to create
+                accessible navigation menus that work well for all users, including those with disabilities.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+    </div>
+    
+    <div class="pagination">
+        <span class="current-page">Page 1</span>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+        <a href="#" class="page-link next">Next &raquo;</a>
+    </div>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

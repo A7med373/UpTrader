@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Configuration Guide - Tree Menu Demo{% endblock %}
+
+{% block header %}Configuration Guide{% endblock %}
+
+{% block content %}
+    <p>This is the configuration guide page of the Tree Menu demonstration.</p>
+    <p>Learn how to configure and customize the Tree Menu application to suit your needs.</p>
+    
+    <h3>Basic Configuration</h3>
+    <p>The Tree Menu application can be configured in your Django settings.py file:</p>
+    <pre><code>
+# settings.py
+
+# Tree Menu settings
+TREE_MENU = {
+    'CACHE_TIME': 3600,  # Cache timeout in seconds (default: 1 hour)
+    'DEFAULT_MENU_TEMPLATE': 'menu/default.html',  # Default template for rendering menus
+    'ACTIVE_CLASS': 'active',  # CSS class for active menu items
+    'ANCESTOR_CLASS': 'ancestor',  # CSS class for ancestors of the active item
+    'SHOW_FIRST_LEVEL': True,  # Always show first level of menu items
+}
+    </code></pre>
+    
+    <h3>Menu Templates</h3>
+    <p>You can customize the appearance of menus by creating your own templates. The default template structure is:</p>
+    <pre><code>
+&lt;ul&gt;
+    {% for item in menu_items %}
+    &lt;li class="{{ item.css_classes }}"&gt;
+        &lt;a href="{{ item.url }}"&gt;{{ item.name }}&lt;/a&gt;
+        {% if item.children %}
+            {% include template_name with menu_items=item.children %}
+        {% endif %}
+    &lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+    </code></pre>
+    
+    <h3>Advanced Configuration</h3>
+    <p>For more advanced customization, you can extend the base models and template tags:</p>
+    <ol>
+        <li>Create a custom Menu model that inherits from tree_menu.models.Menu</li>
+        <li>Create a custom MenuItem model that inherits from tree_menu.models.MenuItem</li>
+        <li>Create custom template tags that extend the functionality of the draw_menu tag</li>
+    </ol>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

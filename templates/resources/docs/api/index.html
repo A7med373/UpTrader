@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}API Documentation - Tree Menu Demo{% endblock %}
+
+{% block header %}API Documentation{% endblock %}
+
+{% block content %}
+    <p>This is the API documentation page of the Tree Menu demonstration.</p>
+    <p>Our API documentation provides detailed information about our APIs and how to use them.</p>
+    
+    <h3>Available APIs</h3>
+    <ul>
+        <li><strong>REST API</strong> - Our RESTful API for accessing and manipulating data</li>
+        <li><strong>GraphQL API</strong> - Our GraphQL API for flexible data querying</li>
+    </ul>
+    
+    <h3>Authentication</h3>
+    <p>All our APIs require authentication. We support the following authentication methods:</p>
+    <ul>
+        <li><strong>API Keys</strong> - Simple API key authentication</li>
+        <li><strong>OAuth 2.0</strong> - Secure authentication protocol</li>
+        <li><strong>JWT</strong> - JSON Web Token authentication</li>
+    </ul>
+    
+    <h3>Rate Limiting</h3>
+    <p>Our APIs have rate limits to ensure fair usage. The default rate limit is 100 requests per minute per API key.</p>
+    
+    <h3>Getting Started</h3>
+    <p>To get started with our APIs, follow these steps:</p>
+    <ol>
+        <li>Sign up for an API key</li>
+        <li>Choose the API that best fits your needs</li>
+        <li>Read the documentation for that API</li>
+        <li>Make your first API request</li>
+    </ol>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Tutorials - Tree Menu Demo{% endblock %}
+
+{% block header %}Tutorials{% endblock %}
+
+{% block content %}
+    <p>This is the tutorials page of the Tree Menu demonstration.</p>
+    <p>Our tutorials provide step-by-step instructions for learning how to use our products and libraries.</p>
+    
+    <h3>Tutorial Categories</h3>
+    <ul>
+        <li><strong>Beginner Tutorials</strong> - Tutorials for those new to our products</li>
+        <li><strong>Advanced Tutorials</strong> - Tutorials for experienced users looking to master advanced features</li>
+    </ul>
+    
+    <h3>Featured Tutorials</h3>
+    <div class="tutorial-list">
+        <div class="tutorial-item">
+            <h4>Getting Started with Tree Menu</h4>
+            <p>Learn the basics of the Tree Menu application and how to set it up in your Django project.</p>
+            <p><strong>Difficulty:</strong> Beginner</p>
+            <p><strong>Duration:</strong> 15 minutes</p>
+            <a href="#" class="tutorial-link">Start Tutorial</a>
+        </div>
+        
+        <div class="tutorial-item">
+            <h4>Creating Your First Menu</h4>
+            <p>Learn how to create a menu and add items to it using the Django admin interface.</p>
+            <p><strong>Difficulty:</strong> Beginner</p>
+            <p><strong>Duration:</strong> 20 minutes</p>
+            <a href="#" class="tutorial-link">Start Tutorial</a>
+        </div>
+        
+        <div class="tutorial-item">
+            <h4>Advanced Menu Customization</h4>
+            <p>Learn how to customize the appearance and behavior of your menus.</p>
+            <p><strong>Difficulty:</strong> Advanced</p>
+            <p><strong>Duration:</strong> 30 minutes</p>
+            <a href="#" class="tutorial-link">Start Tutorial</a>
+        </div>
+    </div>
+    
+    <h3>Learning Path</h3>
+    <p>For the best learning experience, we recommend following our tutorials in this order:</p>
+    <ol>
+        <li>Getting Started with Tree Menu</li>
+        <li>Creating Your First Menu</li>
+        <li>Displaying Menus in Templates</li>
+        <li>Styling Your Menu</li>
+        <li>Advanced Menu Customization</li>
+    </ol>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}
