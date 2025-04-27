@@ -19,17 +19,17 @@ def draw_menu(context, menu_name):
     3. Active item is determined by the current URL
     4. Only one database query per menu
     """
-    request = context['request']
+    request = context["request"]
     current_path = request.path
 
     # Get the menu and all its items in a single query
     try:
-        menu = Menu.objects.prefetch_related('items').get(name=menu_name)
+        menu = Menu.objects.prefetch_related("items").get(name=menu_name)
     except Menu.DoesNotExist:
         return mark_safe(f"<!-- Menu '{menu_name}' does not exist -->")
 
     # Get all menu items for this menu
-    menu_items = menu.items.select_related('parent').all()
+    menu_items = menu.items.select_related("parent").all()
 
     # Create a dictionary of items by their IDs for easy lookup
     items_dict = {item.id: item for item in menu_items}
@@ -54,10 +54,10 @@ def draw_menu(context, menu_name):
             active_item_id = item.id
             break
         # Handle URLs with fragment identifiers for exact path match
-        elif '#' in item_url:
-            url_path = item_url.split('#')[0]
+        elif "#" in item_url:
+            url_path = item_url.split("#")[0]
             # If the URL path is empty or just a slash, use the current path
-            if not url_path or url_path == '/':
+            if not url_path or url_path == "/":
                 url_path = current_path
             # Check if the current path matches the URL path
             if url_path == current_path:
@@ -71,15 +71,16 @@ def draw_menu(context, menu_name):
             item_url = item.get_absolute_url()
 
             # Handle URLs with fragment identifiers
-            if '#' in item_url:
-                url_path = item_url.split('#')[0]
+            if "#" in item_url:
+                url_path = item_url.split("#")[0]
                 # If the URL path is empty or just a slash, use the current path
-                if not url_path or url_path == '/':
+                if not url_path or url_path == "/":
                     url_path = current_path
 
                 # Check if the current path matches or starts with the URL path
-                if (url_path == current_path or
-                        (current_path.startswith(url_path) and len(url_path) > max_match_length and url_path != '/')):
+                if url_path == current_path or (
+                    current_path.startswith(url_path) and len(url_path) > max_match_length and url_path != "/"
+                ):
                     # For exact matches, set as active and break
                     if url_path == current_path:
                         active_item_id = item.id
@@ -89,7 +90,7 @@ def draw_menu(context, menu_name):
                         max_match_length = len(url_path)
                         active_item_id = item.id
             # Regular URL matching for nested paths
-            elif current_path.startswith(item_url) and len(item_url) > max_match_length and item_url != '/':
+            elif current_path.startswith(item_url) and len(item_url) > max_match_length and item_url != "/":
                 max_match_length = len(item_url)
                 active_item_id = item.id
 
@@ -123,7 +124,7 @@ def _render_menu_level(parent_id, children_dict, items_dict, active_item_id, act
     if parent_id not in children_dict:
         return ""
 
-    result = '<ul>'
+    result = "<ul>"
     for item in children_dict[parent_id]:
         is_active = item.id == active_item_id
         is_ancestor = item.id in active_item_ancestors
@@ -135,20 +136,20 @@ def _render_menu_level(parent_id, children_dict, items_dict, active_item_id, act
         # Build the item's HTML
         css_classes = []
         if is_active:
-            css_classes.append('active')
+            css_classes.append("active")
         if is_ancestor:
-            css_classes.append('ancestor')
+            css_classes.append("ancestor")
         if has_children:
-            css_classes.append('has-children')
+            css_classes.append("has-children")
 
-        class_attr = f' class="{" ".join(css_classes)}"' if css_classes else ''
+        class_attr = f' class="{" ".join(css_classes)}"' if css_classes else ""
         result += f'<li{class_attr}><a href="{item.get_absolute_url()}">{item.name}</a>'
 
         # Render children if this item should be expanded
         if has_children and expand_children:
             result += _render_menu_level(item.id, children_dict, items_dict, active_item_id, active_item_ancestors)
 
-        result += '</li>'
+        result += "</li>"
 
-    result += '</ul>'
+    result += "</ul>"
     return result
