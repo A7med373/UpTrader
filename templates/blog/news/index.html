@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Company News - Tree Menu Demo{% endblock %}
+
+{% block header %}Company News{% endblock %}
+
+{% block content %}
+    <p>This is the company news page of the Tree Menu demonstration.</p>
+    <p>Here you'll find the latest news and announcements about the Tree Menu project and our company.</p>
+    
+    <div class="blog-posts">
+        <article class="blog-post">
+            <h3>Tree Menu 2.0 Released</h3>
+            <p class="post-meta">Posted on <time datetime="2023-06-01">June 1, 2023</time> by <span class="author">Admin</span></p>
+            <p class="post-excerpt">
+                We're excited to announce the release of Tree Menu 2.0! This major update includes performance improvements,
+                new features, and better compatibility with the latest Django versions. Upgrade today to take advantage of
+                these improvements.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Tree Menu Now Supports Django 4.2</h3>
+            <p class="post-meta">Posted on <time datetime="2023-04-30">April 30, 2023</time> by <span class="author">Admin</span></p>
+            <p class="post-excerpt">
+                We've updated Tree Menu to be fully compatible with Django 4.2. This update ensures that you can continue
+                to use Tree Menu with the latest version of Django without any compatibility issues.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>New Documentation Site Launched</h3>
+            <p class="post-meta">Posted on <time datetime="2023-03-15">March 15, 2023</time> by <span class="author">Admin</span></p>
+            <p class="post-excerpt">
+                We've launched a new documentation site for Tree Menu! The new site includes comprehensive documentation,
+                tutorials, and examples to help you get the most out of Tree Menu. Check it out today!
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Tree Menu Reaches 10,000 Downloads</h3>
+            <p class="post-meta">Posted on <time datetime="2023-02-20">February 20, 2023</time> by <span class="author">Admin</span></p>
+            <p class="post-excerpt">
+                We're thrilled to announce that Tree Menu has reached 10,000 downloads on PyPI! Thank you to all our users
+                for your support and feedback. We're committed to continuing to improve Tree Menu and add new features.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+    </div>
+    
+    <div class="pagination">
+        <span class="current-page">Page 1</span>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+        <a href="#" class="page-link next">Next &raquo;</a>
+    </div>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

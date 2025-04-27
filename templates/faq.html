@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}FAQ - Tree Menu Demo{% endblock %}
+
+{% block header %}Frequently Asked Questions{% endblock %}
+
+{% block content %}
+    <p>This is the FAQ page of the Tree Menu demonstration.</p>
+    <p>Here are some frequently asked questions about our products and services:</p>
+    
+    <h3>What is a tree menu?</h3>
+    <p>A tree menu is a hierarchical navigation structure that allows users to browse through different levels of content. It's similar to a file system, where folders can contain subfolders and files.</p>
+    
+    <h3>How do I create a tree menu in Django?</h3>
+    <p>This demo shows how to create a tree menu in Django using a template tag. The menu items are stored in the database and can be edited in the Django admin interface.</p>
+    
+    <h3>Can I have multiple menus on the same page?</h3>
+    <p>Yes, you can have multiple menus on the same page. Each menu is identified by a unique name, and you can use the template tag to display different menus in different parts of your page.</p>
+    
+    <h3>How does the menu know which item is active?</h3>
+    <p>The active menu item is determined by the current URL. The menu compares the URL of each item with the current URL and highlights the matching item.</p>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

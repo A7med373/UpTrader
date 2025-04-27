@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Code Examples - Tree Menu Demo{% endblock %}
+
+{% block header %}Code Examples{% endblock %}
+
+{% block content %}
+    <p>This is the code examples page of the Tree Menu demonstration.</p>
+    <p>Here you'll find practical code examples for common use cases of the Tree Menu application.</p>
+    
+    <h3>Basic Examples</h3>
+    
+    <div class="example">
+        <h4>Creating a Menu Programmatically</h4>
+        <pre><code>
+from tree_menu.models import Menu, MenuItem
+
+# Create a menu
+main_menu = Menu.objects.create(name='main_menu')
+
+# Create top-level items
+home = MenuItem.objects.create(menu=main_menu, name='Home', url='/', is_named_url=False)
+about = MenuItem.objects.create(menu=main_menu, name='About', url='/about/', is_named_url=False)
+services = MenuItem.objects.create(menu=main_menu, name='Services', url='/services/', is_named_url=False)
+
+# Create nested items
+company = MenuItem.objects.create(menu=main_menu, name='Company', url='/about/company/', is_named_url=False, parent=about)
+team = MenuItem.objects.create(menu=main_menu, name='Team', url='/about/team/', is_named_url=False, parent=about)
+        </code></pre>
+    </div>
+    
+    <div class="example">
+        <h4>Using Named URLs</h4>
+        <pre><code>
+from tree_menu.models import Menu, MenuItem
+
+# Create a menu with named URLs
+main_menu = Menu.objects.create(name='main_menu')
+
+# Create items with named URLs
+home = MenuItem.objects.create(menu=main_menu, name='Home', url='home', is_named_url=True)
+about = MenuItem.objects.create(menu=main_menu, name='About', url='about', is_named_url=True)
+services = MenuItem.objects.create(menu=main_menu, name='Services', url='services', is_named_url=True)
+        </code></pre>
+    </div>
+    
+    <h3>Advanced Examples</h3>
+    
+    <div class="example">
+        <h4>Custom Menu Rendering</h4>
+        <pre><code>
+# In your template
+{% load menu_tags %}
+&lt;div class="custom-menu"&gt;
+    {% draw_menu 'main_menu' %}
+&lt;/div&gt;
+
+# In your CSS
+.custom-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.custom-menu li {
+    margin: 5px 0;
+}
+.custom-menu li.active > a {
+    font-weight: bold;
+    color: #007bff;
+}
+.custom-menu li.ancestor > a {
+    color: #6c757d;
+}
+        </code></pre>
+    </div>
+    
+    <p>For more examples, check out our <a href="/resources/examples/demos/">demo projects</a>.</p>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

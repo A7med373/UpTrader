@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Tree Menu Demo{% endblock %}
+
+{% block header %}Welcome to Tree Menu Demo{% endblock %}
+
+{% block content %}
+    <p>This is the home page of the Tree Menu demonstration.</p>
+    <p>The menu on the left demonstrates a tree-structured menu with the following features:</p>
+    <ul>
+        <li>All items above the selected item are expanded</li>
+        <li>First level of children under the selected item is also expanded</li>
+        <li>Active item is highlighted based on the current URL</li>
+        <li>Multiple menus can be displayed on the same page</li>
+        <li>Only one database query is used per menu</li>
+    </ul>
+    <p>Try clicking on different menu items to see how the menu expands and collapses.</p>
+{% endblock %}

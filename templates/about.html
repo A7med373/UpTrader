@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Tree Menu Demo{% endblock %}
+
+{% block header %}About This Project{% endblock %}
+
+{% block content %}
+    <p>This is the about page of the Tree Menu demonstration.</p>
+    <p>This project implements a tree-structured menu in Django with the following requirements:</p>
+    <ul>
+        <li>Menu is implemented as a template tag</li>
+        <li>Menu items are stored in the database</li>
+        <li>Menu can be edited in the Django admin interface</li>
+        <li>Active menu item is determined by the current URL</li>
+        <li>Multiple menus can be displayed on a single page</li>
+        <li>Menu items can use both explicit URLs and named URLs</li>
+        <li>Only one database query is used per menu rendering</li>
+    </ul>
+    <p>The implementation follows Django best practices and PEP 8 style guidelines.</p>
+{% endblock %}

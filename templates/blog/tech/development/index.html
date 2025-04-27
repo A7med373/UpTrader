@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}Development Blog - Tree Menu Demo{% endblock %}
+
+{% block header %}Development Blog{% endblock %}
+
+{% block content %}
+    <p>This is the development blog page of the Tree Menu demonstration.</p>
+    <p>Here you'll find articles about development topics related to the Tree Menu application and Django development in general.</p>
+    
+    <div class="blog-posts">
+        <article class="blog-post">
+            <h3>Implementing a Tree Menu in Django</h3>
+            <p class="post-meta">Posted on <time datetime="2023-05-15">May 15, 2023</time> by <span class="author">John Doe</span></p>
+            <p class="post-excerpt">
+                In this article, we'll explore how to implement a tree-structured menu in Django using a custom template tag and database models.
+                We'll cover the design decisions, implementation details, and best practices for creating a reusable menu system.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Optimizing Database Queries for Tree Structures</h3>
+            <p class="post-meta">Posted on <time datetime="2023-04-22">April 22, 2023</time> by <span class="author">Jane Smith</span></p>
+            <p class="post-excerpt">
+                Working with tree structures in relational databases can be challenging. In this article, we'll look at different approaches
+                to storing and querying tree structures in Django, with a focus on performance optimization.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Creating Reusable Template Tags in Django</h3>
+            <p class="post-meta">Posted on <time datetime="2023-03-10">March 10, 2023</time> by <span class="author">John Doe</span></p>
+            <p class="post-excerpt">
+                Template tags are a powerful feature of Django's template system. In this article, we'll explore how to create
+                reusable template tags that can be used across different projects, with the Tree Menu tag as an example.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+        
+        <article class="blog-post">
+            <h3>Django Admin Customization for Tree Structures</h3>
+            <p class="post-meta">Posted on <time datetime="2023-02-05">February 5, 2023</time> by <span class="author">Jane Smith</span></p>
+            <p class="post-excerpt">
+                The Django admin interface is a powerful tool for managing your application's data. In this article, we'll look at
+                how to customize the admin interface to make it easier to work with tree-structured data like menus.
+            </p>
+            <a href="#" class="read-more">Read More</a>
+        </article>
+    </div>
+    
+    <div class="pagination">
+        <span class="current-page">Page 1</span>
+        <a href="#" class="page-link">2</a>
+        <a href="#" class="page-link">3</a>
+        <a href="#" class="page-link next">Next &raquo;</a>
+    </div>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

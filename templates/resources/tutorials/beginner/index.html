@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Beginner Tutorials - Tree Menu Demo{% endblock %}
+
+{% block header %}Beginner Tutorials{% endblock %}
+
+{% block content %}
+    <p>This is the beginner tutorials page of the Tree Menu demonstration.</p>
+    <p>These tutorials will help you get started with the Tree Menu application.</p>
+    
+    <h3>Available Tutorials</h3>
+    <div class="tutorial-list">
+        <div class="tutorial-item">
+            <h4>Getting Started with Tree Menu</h4>
+            <p>Learn the basics of the Tree Menu application and how to set it up in your Django project.</p>
+            <p><strong>Difficulty:</strong> Beginner</p>
+            <p><strong>Duration:</strong> 15 minutes</p>
+            <a href="#" class="tutorial-link">Read Tutorial</a>
+        </div>
+        
+        <div class="tutorial-item">
+            <h4>Creating Your First Menu</h4>
+            <p>Learn how to create a menu and add items to it using the Django admin interface.</p>
+            <p><strong>Difficulty:</strong> Beginner</p>
+            <p><strong>Duration:</strong> 20 minutes</p>
+            <a href="#" class="tutorial-link">Read Tutorial</a>
+        </div>
+        
+        <div class="tutorial-item">
+            <h4>Displaying Menus in Templates</h4>
+            <p>Learn how to use the template tag to display menus in your Django templates.</p>
+            <p><strong>Difficulty:</strong> Beginner</p>
+            <p><strong>Duration:</strong> 10 minutes</p>
+            <a href="#" class="tutorial-link">Read Tutorial</a>
+        </div>
+        
+        <div class="tutorial-item">
+            <h4>Styling Your Menu</h4>
+            <p>Learn how to apply CSS styles to your menu to make it look great.</p>
+            <p><strong>Difficulty:</strong> Beginner</p>
+            <p><strong>Duration:</strong> 25 minutes</p>
+            <a href="#" class="tutorial-link">Read Tutorial</a>
+        </div>
+    </div>
+    
+    <p>Once you've completed these beginner tutorials, check out our <a href="/resources/tutorials/advanced/">advanced tutorials</a> for more in-depth topics.</p>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

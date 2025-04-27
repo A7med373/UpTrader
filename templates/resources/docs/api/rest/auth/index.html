@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}API Authentication - Tree Menu Demo{% endblock %}
+
+{% block header %}API Authentication Documentation{% endblock %}
+
+{% block content %}
+    <p>This is the API Authentication documentation page of the Tree Menu demonstration.</p>
+    <p>Our REST API supports multiple authentication methods to secure your API endpoints.</p>
+    
+    <h3>Authentication Methods</h3>
+    <ul>
+        <li><strong>Token Authentication</strong> - Simple token-based authentication</li>
+        <li><strong>JWT Authentication</strong> - JSON Web Token based authentication</li>
+        <li><strong>OAuth2</strong> - Industry-standard protocol for authorization</li>
+        <li><strong>API Keys</strong> - Simple API key authentication</li>
+    </ul>
+    
+    <h3>Implementation Examples</h3>
+    <p>Here's a simple example of how to authenticate with our API using JWT:</p>
+    <pre><code>
+    // Example request with JWT authentication
+    fetch('https://api.example.com/data', {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...',
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => console.log(data));
+    </code></pre>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

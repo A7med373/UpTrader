@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog - Tree Menu Demo{% endblock %}
+
+{% block header %}Blog{% endblock %}
+
+{% block content %}
+    <p>This is the blog page of the Tree Menu demonstration.</p>
+    <p>Our blog features articles on various topics:</p>
+    
+    <h3>Tech Blog</h3>
+    <p>Articles about technology, development, and industry trends.</p>
+    
+    <h3>Company News</h3>
+    <p>Updates about our company, products, and services.</p>
+    
+    <h3>Latest Articles</h3>
+    <ul>
+        <li><strong>Understanding Tree Menus in Django</strong> - A comprehensive guide to implementing tree menus in Django</li>
+        <li><strong>Optimizing Database Queries in Django</strong> - Tips and tricks for improving performance</li>
+        <li><strong>Building Reusable Template Tags</strong> - How to create flexible and reusable template tags</li>
+    </ul>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}

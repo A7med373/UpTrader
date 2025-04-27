@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Installation Guide - Tree Menu Demo{% endblock %}
+
+{% block header %}Installation Guide{% endblock %}
+
+{% block content %}
+    <p>This is the installation guide page of the Tree Menu demonstration.</p>
+    <p>Follow these steps to install and set up the Tree Menu application in your Django project.</p>
+    
+    <h3>Prerequisites</h3>
+    <ul>
+        <li>Python 3.8 or higher</li>
+        <li>Django 3.2 or higher</li>
+        <li>pip (Python package manager)</li>
+    </ul>
+    
+    <h3>Installation Steps</h3>
+    <ol>
+        <li>
+            <p><strong>Install the package using pip:</strong></p>
+            <pre><code>pip install django-tree-menu</code></pre>
+        </li>
+        <li>
+            <p><strong>Add 'tree_menu' to your INSTALLED_APPS in settings.py:</strong></p>
+            <pre><code>
+INSTALLED_APPS = [
+    ...
+    'tree_menu',
+    ...
+]
+            </code></pre>
+        </li>
+        <li>
+            <p><strong>Run migrations to create the necessary database tables:</strong></p>
+            <pre><code>python manage.py migrate</code></pre>
+        </li>
+        <li>
+            <p><strong>Include the template tag in your template:</strong></p>
+            <pre><code>
+{% load menu_tags %}
+{% draw_menu 'main_menu' %}
+            </code></pre>
+        </li>
+    </ol>
+    
+    <h3>Verifying Installation</h3>
+    <p>To verify that the installation was successful:</p>
+    <ol>
+        <li>Access the Django admin interface</li>
+        <li>Create a new menu with some menu items</li>
+        <li>Add the template tag to your template</li>
+        <li>View the page and check if the menu is displayed correctly</li>
+    </ol>
+    
+    <p>Notice how the menu on the left highlights the current page and expands the relevant sections.</p>
+{% endblock %}
